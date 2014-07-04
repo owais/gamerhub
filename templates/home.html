@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- 1. Load platform.js for polyfill support. -->
+    <script src="static/components/platform/platform.js"></script>
+
+    <!-- 2. Use an HTML Import to bring in the element. -->
+    <link rel="import"
+          href="static/components/core-ajax/core-ajax.html">
+    <link rel="import"
+          href="static/components/paper-button/paper-button.html">
+    <link rel="import" 
+      href="static/components/core-toolbar/core-toolbar.html">
+    <link rel="import" 
+      href="static/components/core-header-panel/core-header-panel.html">
+    <link rel="import" 
+      href="static/components/core-icons/core-icons.html">
+    <link rel="import" 
+      href="static/components/paper-input/paper-input.html">
+    <link rel="import" 
+      href="static/components/paper-icon-button/paper-icon-button.html">
+  </head>
+  <body fullbleed unresolved>
+
+    <core-toolbar>
+      <core-icon-button icon="menu" on-tap=""></core-icon-button>
+      <div flex>GamerHub</div>
+      <paper-shadow z="1"></paper-shadow>
+    </core-toolbar>
+    <br><br>
+    <paper-input label="Your Name" floatinglabel>
+    <paper-button label="flat button"><paper-shadow z="5"></paper-shadow></paper-button>
+
+    <!--core-input placeholder="Placeholder text here"></core-input-->
+    <!-- core-ajax url="http://example.com/json"
+               handleAs="json"></core-ajax>
+
+    <script>
+      // Wait for 'polymer-ready'. Ensures the element is upgraded.
+      window.addEventListener('polymer-ready', function(e) {
+        var ajax = document.querySelector('core-ajax');
+
+        // Respond to events it fires.
+        ajax.addEventListener('core-response', function(e) {
+          console.log(this.response);
+        });
+
+        ajax.go(); // Call its API methods.
+      });
+    </script-->
+  </body>
+</html>
